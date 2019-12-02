@@ -12,6 +12,10 @@ $loader = new Twig\Loader\FilesystemLoader(dirname(__DIR__).'/App/Views');
 //   }
 //});
 
+error_reporting(E_ALL);
+set_error_handler('Core\Error::errorHandler');
+set_exception_handler('Core\Error::exceptionHandler');
+
 /**
  * Routing
  */

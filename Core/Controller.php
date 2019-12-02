@@ -20,7 +20,7 @@ abstract class Controller
                 $this->after();
             }
         } else {
-            echo get_class($this).' sınıfında '.$method.' metodu bulunamadı!';
+            throw new \Exception(get_class($this).' sınıfında '.$method.' metodu bulunamadı!');
         }
     }
 

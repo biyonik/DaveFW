@@ -87,13 +87,13 @@ class Router
                 if(is_callable([$controller_object, $action])) {
                     $controller_object->$action();
                 } else {
-                    echo "$controller içerisinde $action metodu bulunamadı!";
+                    throw new \Exception("$controller içerisinde $action metodu bulunamadı!");
                 }
             } else {
-                echo "$controller sınıfı bulunamadı!";
+                throw new \Exception("$controller sınıfı bulunamadı!");
             }
         } else {
-            echo "Eşleşen bir rota bulunamadı!";
+            throw new \Exception("Eşleşen bir rota bulunamadı!",404);
         }
     }
 
