@@ -2,14 +2,12 @@
 
 namespace App\Controllers;
 use Core\View;
-
+use App\Models\Post;
 class Posts extends \Core\Controller
 {
     public function indexAction() {
-        View::renderTemplate('Posts/index.php', array(
-            'fullName' => 'Ahmet Altun',
-            'age' => 29
-        ));
+        $posts = Post::getAll();
+        View::renderTemplate('Posts/index.php', ['posts' => $posts]);
     }
 
     public function addNew() {

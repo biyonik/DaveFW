@@ -8,7 +8,13 @@
     <title>Posts</title>
 </head>
 <body>
-<p>Tam İsim: {{ fullName }}</p>
-<p>Yaş: {{ age }}</p>
+    <h1>Posts</h1>
+    <hr>
+    <ul>
+        {%for post in posts%}
+        <h2>{{post.title}}</h2>
+        <p>{{post.content}}</p>
+        {%endfor%}
+    </ul>
 </body>
 </html>
